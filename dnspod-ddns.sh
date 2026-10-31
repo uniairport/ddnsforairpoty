@@ -4,10 +4,11 @@ set -euo pipefail
 umask 077
 # Public defaults. Leave credentials blank when publishing to GitHub.
 # For EC2 User Data, fill these values in your PRIVATE copy before launch.
-DNSPOD_SECRET_ID="${DNSPOD_SECRET_ID:-}"
-DNSPOD_SECRET_KEY="${DNSPOD_SECRET_KEY:-}"
-DNSPOD_DOMAIN="${DNSPOD_DOMAIN:-nianjiushiwodewenti.com}"
-DNSPOD_SUBDOMAIN="${DNSPOD_SUBDOMAIN:-}"
+# DNSPod account: fanchuniceboy@gmail.com (API authentication uses SecretId/SecretKey).
+DNSPOD_SECRET_ID=IKIDS6mNsQn14wjMmy03tVu77ye9SaO6cuzq
+DNSPOD_SECRET_KEY=lKH7mHZgaJrBJNH2fppeIk06ziJjyzqj
+DNSPOD_DOMAIN=nianjiushiwodewenti.com
+DNSPOD_SUBDOMAIN='cdnfordownload'
 
 if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
   echo 'Usage: sudo bash dnspod-ddns.sh'
@@ -344,7 +345,7 @@ ProtectSystem=strict
 DNSPOD_SERVICE_EOF
 cat > /etc/systemd/system/dnspod-ddns.timer <<'DNSPOD_TIMER_EOF'
 [Unit]
-Description=Check DNSPod on every boot and every five minutes
+Description=Check DNSPod on every boot and every sixty seconds
 
 [Timer]
 OnBootSec=30s
