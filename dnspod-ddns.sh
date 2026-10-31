@@ -348,8 +348,9 @@ Description=Check DNSPod on every boot and every five minutes
 
 [Timer]
 OnBootSec=30s
-OnUnitActiveSec=5min
-RandomizedDelaySec=10s
+OnUnitActiveSec=60s
+RandomizedDelaySec=0
+AccuracySec=1s
 Unit=dnspod-ddns.service
 
 [Install]
