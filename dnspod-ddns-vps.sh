@@ -7,7 +7,7 @@ umask 077
 DNSPOD_SECRET_ID=IKIDS6mNsQn14wjMmy03tVu77ye9SaO6cuzq
 DNSPOD_SECRET_KEY=lKH7mHZgaJrBJNH2fppeIk06ziJjyzqj
 DNSPOD_DOMAIN=nianjiushiwodewenti.com
-DNSPOD_SUBDOMAIN=cdnfordownload
+DNSPOD_SUBDOMAIN=cdnhk
 
 if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
   echo 'Usage: sudo bash dnspod-ddns-vps.sh'
